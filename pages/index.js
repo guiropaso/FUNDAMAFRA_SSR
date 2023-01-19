@@ -1,5 +1,9 @@
+import Link from 'next/link'
+
 export default function Home() {
   return (
-    <h3>Hola!!!</h3>
+    <>
+      <h2 className='text-red-500'>Componente</h2>
+    </>
   )
 }
