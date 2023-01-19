@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
+import Image from 'next/image'
 
 
 export default function Header() {
@@ -25,7 +26,12 @@ export default function Header() {
         <div className='flex items-center justify-between'>
           {/* Logo */}
           <div>
-            <img className='w-4/6'  src="/images/fundamafra-logoweb.png" alt="" />
+            <Image
+              src="/images/fundamafra-logoweb.png" // Route of the image file
+              height={225} // Desired size with correct aspect ratio
+              width={133} // Desired size with correct aspect ratio
+              alt="FUNDAMAFRA logo"
+            />
           </div>
           {/* Pages */}
           <div className='hidden space-x-12 font-semibold md:flex'>
@@ -48,7 +54,7 @@ export default function Header() {
             <Link className='w-full text-center leading-10 bg-white' onClick={handleClick} href="/proyectos">Proyectos</Link>
             <Link className='w-full text-center leading-10 bg-white' onClick={handleClick} href="/contacto">Contacto</Link>
             <Link className='w-full text-center leading-10 rounded-b bg-indigo-600 text-white' onClick={handleClick} href="/">Dona ahora</Link>
-            
+
           </div>
         </div>
       </nav>

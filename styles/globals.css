@@ -1,3 +1,82 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#hp-banner {
+    background-color: #a35392;
+    background-image: url(../public/images/wp1.jpg);
+    background-size: cover;
+}
+
+#proyectos-banner {
+    background-color: #666;
+    background-image: url(../public/images/wp2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#menu-btn {
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+}
+
+#menu-btn span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transition: all 0.5s;
+}
+
+.hamburguer-middle {
+    transform: translateY(7px);
+}
+
+.hamburguer-bottom {
+    transform: translateY(14px);
+}
+
+
+.open .hamburguer-top {
+    transform: rotate(45deg)  translate(6px,6px);
+}
+
+.open .hamburguer-bottom {
+    transform: rotate(315deg)  translate(-6px,6px);
+}
+.open .hamburguer-middle {
+    display: none;
+}
+
+.proyectos--span-rotated {
+    writing-mode: vertical-lr;
+}
+
+.curves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.curves svg {
+    position: relative;
+    display: block;
+    width: calc(106% + 1.3px);
+    height: 150px;
+}
+
+.curves .shape-fill {
+    fill: #FFFFFF;
+}
+
+#contacto-intro {
+    background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+}
