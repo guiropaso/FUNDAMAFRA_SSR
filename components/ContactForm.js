@@ -1,4 +1,3 @@
-import sendData from '@/lib/api'
 import {Formik, Form, Field, ErrorMessage} from 'formik'
 import * as Yup from 'yup'
 
@@ -11,7 +10,16 @@ const initialValues = {
 
 const onSubmit = async values => {
     console.log(values)
-    await sendData(values)
+    const response = await fetch('/api/mailer', {
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    const data = await response.json()
+    console.log(data);
 }
 
 const phoneRegExp = /^\+?[1-9][0-9]{7,14}$/
@@ -23,13 +31,6 @@ const validationSchema = Yup.object({
     mensaje: Yup.string().required('Required')
 })
 
-const prueba = {name: 'Guillermo Palacios', email: 'guillerps1900@gmail.com', tel: '77418845', mensaje: 'qqqq'}
-
-async function sendMensaje() {
-    // let res = await sendData(prueba)
-    // let data = await res.json()
-    // console.log(data)
-}
 
 export default function ContactForm() {
   return (
@@ -77,8 +78,7 @@ export default function ContactForm() {
                     <button type='submit' className='bg-royal p-5 rounded-lg text-white font-bold mt-10 hover:bg-mainBlue'>Enviar Mensaje</button>
                 </div>  
             </Form>
-        </Formik>
-            <button onClick={sendMensaje}>Click Aquí</button>
+        </Formik>   
         </>
     )
 }
