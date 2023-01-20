@@ -1,3 +1,4 @@
+import sendData from '@/lib/api'
 import {Formik, Form, Field, ErrorMessage} from 'formik'
 import * as Yup from 'yup'
 
@@ -10,15 +11,7 @@ const initialValues = {
 
 const onSubmit = async values => {
     console.log(values)
-    const test = await fetch('/.netlify/functions/mailer', {
-        method: 'POST',
-        body: JSON.stringify(values),
-        headers: {
-            "content-type": "application/json; charset=UTF-8"
-        }
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
+    await sendData(values)
 }
 
 const phoneRegExp = /^\+?[1-9][0-9]{7,14}$/
@@ -30,9 +23,17 @@ const validationSchema = Yup.object({
     mensaje: Yup.string().required('Required')
 })
 
+const prueba = {name: 'Guillermo Palacios', email: 'guillerps1900@gmail.com', tel: '77418845', mensaje: 'qqqq'}
+
+async function sendMensaje() {
+    // let res = await sendData(prueba)
+    // let data = await res.json()
+    // console.log(data)
+}
 
 export default function ContactForm() {
   return (
+    <>
     <Formik 
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -77,5 +78,7 @@ export default function ContactForm() {
                 </div>  
             </Form>
         </Formik>
+            <button onClick={sendMensaje}>Click Aquí</button>
+        </>
     )
 }
