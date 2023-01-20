@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 import Image from 'next/image'
+import Logo from '@/public/images/fundamafra-logoweb.png'
 
 
 export default function Header() {
@@ -26,11 +27,7 @@ export default function Header() {
         <div className='flex items-center justify-between'>
           {/* Logo */}
           <div>
-            <Image
-              src="/images/fundamafra-logoweb.png" // Route of the image file
-              height={225} // Desired size with correct aspect ratio
-              width={133} // Desired size with correct aspect ratio
-              alt="FUNDAMAFRA logo"
+            <Image className='w-full md:w-4/6' src={Logo} alt="FUNDAMAFRA logo"
             />
           </div>
           {/* Pages */}

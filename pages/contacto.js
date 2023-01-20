@@ -23,7 +23,7 @@ export default function contacto() {
           </div>
         </div>
       </section>
-      <section id='contact-form'>
+      <section id='contact-form' className='mt-10'>
         <div className='container pb-20 space-y-20 md:space-y-0 mx-auto flex flex-col md:flex-row justify-around items-center'>
           <div>
             <Image className='relative -mt-36' src="/images/contacto.png" alt="contacto" width='550' height='340' />
