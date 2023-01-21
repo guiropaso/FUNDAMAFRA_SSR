@@ -80,3 +80,12 @@
 #contacto-intro {
     background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
 }
+
+.ocultos {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.en-pantalla {
+    opacity: 1;
+}

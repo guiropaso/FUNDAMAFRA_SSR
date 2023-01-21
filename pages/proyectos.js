@@ -1,8 +1,38 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import {FaMedal, FaChild, FaBook, FaBlackTie, FaChalkboardTeacher} from 'react-icons/fa'
+import { useEffect } from 'react'
+import { BiNoEntry } from 'react-icons/bi'
+
 
 export default function Proyectos() {
+
+  useEffect(() => {
+
+    const options = {
+      root: null,
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.3
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('en-pantalla')
+        }
+        else if(!entry.isVisible && entry.intersectionRatio <= 0.3) {
+          entry.target.classList.remove('en-pantalla')
+        }
+      })
+    }, options)
+  
+    const hiddenElements = document.querySelectorAll('.ocultos')
+    hiddenElements.forEach(el => observer.observe(el))
+
+  
+  },[])
+
+
   return (
     <>
       <section id='proyectos-banner' className='bg-blend-multiply'>
@@ -51,7 +81,7 @@ export default function Proyectos() {
         </div>
       </section>
 
-      <section id='proyectos-apadrina' className='bg-mainJam border-b-8 border-royal'>
+      <section id='proyectos-apadrina' className='bg-mainJam border-b-8 border-royal ocultos'>
         <div className='container mx-auto text-center text-white mt-20 py-5'>
           <h4 className='font-bold text-3xl'>WE MAKE A LIVING BY WHAT WE GET. WE MAKE A LIFE BY WHAT WE GIVE.</h4>
           <h5 className='text-sm'>WINSTON S. CHURCHILL</h5>
@@ -64,7 +94,7 @@ export default function Proyectos() {
         </div>
         <div className='container mx-auto flex flex-col space-y-20 justify-center items-center'>
           {/* First Grid Element */}
-          <div className='flex flex-col justify-center md:grid grid-cols-7 grid-rows-2 self-end'>
+          <div className='flex flex-col justify-center md:grid grid-cols-7 grid-rows-2 self-end ocultos'>
             <div className='col-start-1 max-w-sm col-end-4 row-start-1 my-12 mx-auto row-end-3 z-20 bg-slate-100 p-10 order-3 md:order-none'>
               <FaBook className='text-6xl mb-10 text-mainBlue'/>
               <p className='mb-10'>Enseñanza del MÉTODO DE APRENDIZAJE PERCEPTIVO-DISCRIMINATIVO dirigido a niños y jóvenes con síndrome de Down como base preparatoria para un futuro y exitoso programa de lectura y escritura según el método de enseñanza de María Victoria Troncoso y María Mercedes del Cerro (España).</p>

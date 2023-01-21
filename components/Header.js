@@ -46,7 +46,7 @@ export default function Header() {
         </div>
         {/* Hamburguer Menu */}
         <div className='md:hidden'>
-          <div id='menu' className='absolute hidden flex-col items-center mt-10 font-semibold left-20 right-20 drop-shadow-md divide-y'>
+          <div id='menu' className='absolute hidden flex-col items-center mt-10 font-semibold left-20 right-20 drop-shadow-md divide-y z-50'>
             <Link className='w-full text-center leading-10 rounded-t bg-white' onClick={handleClick} href="/">Inicio</Link>
             <Link className='w-full text-center leading-10 bg-white' onClick={handleClick} href="/proyectos">Proyectos</Link>
             <Link className='w-full text-center leading-10 bg-white' onClick={handleClick} href="/contacto">Contacto</Link>
