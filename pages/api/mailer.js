@@ -50,7 +50,7 @@ export default async function handler(req, res) {
 
         let mailOptions = {
             from: `"FUNDAMAFRA Web" <${process.env.MAIL_SENDER}>`,
-            to: '"Pruebas" <guillerps1900@gmail.com> ',
+            to: '"Pruebas" <guillerps1900@gmail.com>,"Pruebas 2" <estelitadepalacios@gmail.com>,"Pruebas 3" <andreagpalacios02@gmail.com>',
             subject: 'Contacto - FUNDAMAFRA',
             html: htmlTemplate(name, email, tel, mensaje)
         }

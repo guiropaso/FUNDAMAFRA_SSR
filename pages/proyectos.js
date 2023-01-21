@@ -2,34 +2,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import {FaMedal, FaChild, FaBook, FaBlackTie, FaChalkboardTeacher} from 'react-icons/fa'
 import { useEffect } from 'react'
-import { BiNoEntry } from 'react-icons/bi'
+import Observer from '@/utils/useObserver'
 
 
 export default function Proyectos() {
 
   useEffect(() => {
 
-    const options = {
-      root: null,
-      rootMargin: '0px 0px -10% 0px',
-      threshold: 0.3
-    }
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          entry.target.classList.add('en-pantalla')
-        }
-        else if(!entry.isVisible && entry.intersectionRatio <= 0.3) {
-          entry.target.classList.remove('en-pantalla')
-        }
-      })
-    }, options)
-  
     const hiddenElements = document.querySelectorAll('.ocultos')
-    hiddenElements.forEach(el => observer.observe(el))
+    Observer(hiddenElements)
 
-  
   },[])
 
 
@@ -37,8 +19,8 @@ export default function Proyectos() {
     <>
       <section id='proyectos-banner' className='bg-blend-multiply'>
         <div className='container mx-auto flex flex-col py-36 justify-center items-center'>
-          <h2 className='text-5xl text-center font-bold text-pink-500'>AYÚDANOS <span className='text-5xl font-bold text-white'> A CUMPLIR SUEÑOS</span> </h2>
-          <p className='text-white mt-2 font-bold text-lg max-w-lg '>Conoce nuestros proyectos</p>
+          <h2 className='text-5xl text-center font-bold text-pink-500 ocultos'>AYÚDANOS <span className='text-5xl font-bold text-white'> A CUMPLIR SUEÑOS</span> </h2>
+          <p className='text-white mt-2 font-bold text-lg max-w-lg ocultos'>Conoce nuestros proyectos</p>
           <p className='text-white mt-5 text-lg px-2 max-w-2xl text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium exercitationem praesentium cum rerum rem libero incidunt, natus, aperiam consequuntur eius necessitatibus hic veniam neque quam dicta odit aliquid quas qui!</p>
         </div>
       </section>
@@ -47,18 +29,18 @@ export default function Proyectos() {
         <h3 className='text-center my-20 font-bold text-3xl text-royal'>NUESTRO <span className='text-center my-20 font-bold text-3xl text-mainJam'>ENFOQUE</span></h3>
         <div className='container mx-auto flex flex-col justify-around items-center md:flex-row'>
           <div className='space-y-6 max-w-sm md:max-w-none'>
-            <div className='flex justify-center space-x-5 bg-slate-100 items-center flex-row p-5 rounded-md'>
+            <div className='flex justify-center space-x-5 bg-slate-100 items-center flex-row p-5 rounded-md ocultos'>
               <div className='text-mainJam'>
-                <FaMedal className='text-6xl'/>
+                <FaMedal className='text-6xl ocultos'/>
               </div>
               <div className='max-w-md'>
                 <h4 className='text-3xl mb-5 text-royal'>Aprendizaje Efectivo</h4>
                 <p className='text-lg text-purple'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sunt quibusdam quia suscipit. Ratione, ullam!</p>
               </div>
             </div>
-            <div className='flex justify-center space-x-5 bg-royal text-white items-center flex-row p-5 rounded-md'>
+            <div className='flex justify-center space-x-5 bg-royal text-white items-center flex-row p-5 rounded-md ocultos'>
               <div>
-                <FaChild className='text-6xl'/>
+                <FaChild className='text-6xl ocultos'/>
               </div>
               <div className='max-w-md text-white'>
                 <h4 className='text-3xl mb-5'>Niñez y juventud</h4>
@@ -67,9 +49,9 @@ export default function Proyectos() {
             </div>
             <div className='flex justify-center space-x-5 bg-slate-100 items-center flex-row p-5 rounded-md'>
               <div className='text-mainJam'>
-                <FaBook className='text-6xl'/>
+                <FaBook className='text-6xl ocultos'/>
               </div>
-              <div className='max-w-md'>
+              <div className='max-w-md ocultos'>
                 <h4 className='text-3xl mb-5 text-royal'>Enseñanzas Aplicables</h4>
                 <p className='text-lg text-purple'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sunt quibusdam quia suscipit. Ratione, ullam!</p>
               </div>
@@ -81,10 +63,10 @@ export default function Proyectos() {
         </div>
       </section>
 
-      <section id='proyectos-apadrina' className='bg-mainJam border-b-8 border-royal ocultos'>
+      <section id='proyectos-apadrina' className='bg-mainJam border-b-8 border-royal'>
         <div className='container mx-auto text-center text-white mt-20 py-5'>
-          <h4 className='font-bold text-3xl'>WE MAKE A LIVING BY WHAT WE GET. WE MAKE A LIFE BY WHAT WE GIVE.</h4>
-          <h5 className='text-sm'>WINSTON S. CHURCHILL</h5>
+          <h4 className='font-bold text-3xl ocultos'>WE MAKE A LIVING BY WHAT WE GET. WE MAKE A LIFE BY WHAT WE GIVE.</h4>
+          <h5 className='text-sm ocultos'>WINSTON S. CHURCHILL</h5>
         </div>
       </section>
 
@@ -94,12 +76,12 @@ export default function Proyectos() {
         </div>
         <div className='container mx-auto flex flex-col space-y-20 justify-center items-center'>
           {/* First Grid Element */}
-          <div className='flex flex-col justify-center md:grid grid-cols-7 grid-rows-2 self-end ocultos'>
+          <div className='flex flex-col justify-center md:grid grid-cols-7 grid-rows-2 self-end'>
             <div className='col-start-1 max-w-sm col-end-4 row-start-1 my-12 mx-auto row-end-3 z-20 bg-slate-100 p-10 order-3 md:order-none'>
-              <FaBook className='text-6xl mb-10 text-mainBlue'/>
-              <p className='mb-10'>Enseñanza del MÉTODO DE APRENDIZAJE PERCEPTIVO-DISCRIMINATIVO dirigido a niños y jóvenes con síndrome de Down como base preparatoria para un futuro y exitoso programa de lectura y escritura según el método de enseñanza de María Victoria Troncoso y María Mercedes del Cerro (España).</p>
-              <span className='text-sm block font-bold'>A Recaudar</span>
-              <span className='text-3xl font-bold text-green-500'>$25,000</span>
+              <FaBook className='text-6xl mb-10 text-mainBlue ocultos'/>
+              <p className='mb-10 ocultos'>Enseñanza del MÉTODO DE APRENDIZAJE PERCEPTIVO-DISCRIMINATIVO dirigido a niños y jóvenes con síndrome de Down como base preparatoria para un futuro y exitoso programa de lectura y escritura según el método de enseñanza de María Victoria Troncoso y María Mercedes del Cerro (España).</p>
+              <span className='text-sm block font-bold ocultos'>A Recaudar</span>
+              <span className='text-3xl font-bold text-green-500 ocultos'>$25,000</span>
             </div>
             <div className='col-start-3 col-end-8 row start-1 row-end-2 order-1 md:order-none'>
               <Image src="/images/p1.jpg" alt="books" width='640' height='286' />
@@ -114,10 +96,10 @@ export default function Proyectos() {
           {/* Second Grid Element */}
           <div className='flex flex-col justify-center md:grid grid-cols-7 grid-rows-2 self-center'>
             <div className='col-start-1 max-w-sm col-end-4 row-start-1 my-12 mx-auto row-end-3 z-20 bg-slate-100 p-10 order-3 md:order-none'>
-              <FaBlackTie className='text-6xl mb-10 text-mainBlue'/>
-              <p className='mb-10'>Involucramiento de jóvenes del área de bachillerato en la experimentación de primera mano del trabajo realizado por profesionales provenientes de sectores relevantes del área profesional, con el objetivo que el futuro graduado pueda tomar una mejor decisión respecto a su futuro profesional.</p>
-              <span className='text-sm block font-bold'>A Recaudar</span>
-              <span className='text-3xl font-bold text-green-500'>$19,000</span>
+              <FaBlackTie className='text-6xl mb-10 text-mainBlue ocultos'/>
+              <p className='mb-10 ocultos'>Involucramiento de jóvenes del área de bachillerato en la experimentación de primera mano del trabajo realizado por profesionales provenientes de sectores relevantes del área profesional, con el objetivo que el futuro graduado pueda tomar una mejor decisión respecto a su futuro profesional.</p>
+              <span className='text-sm block font-bold ocultos'>A Recaudar</span>
+              <span className='text-3xl font-bold text-green-500 ocultos'>$19,000</span>
             </div>
             <div className='col-start-3 col-end-8 row start-1 row-end-2 order-1 md:order-none'>
               <Image src="/images/p2.jpg" alt="computer" width='640' height='286'/>
@@ -132,10 +114,10 @@ export default function Proyectos() {
           {/* Third Grid Element */}
           <div className='flex flex-col justify-center md:grid grid-cols-7 grid-rows-2 self-end'>
             <div className='col-start-1 max-w-sm col-end-4 row-start-1 my-12 mx-auto row-end-3 z-20 bg-slate-100 p-10 order-3 md:order-none'>
-              <FaChalkboardTeacher className='text-6xl mb-10 text-mainBlue'/>
-              <p className='mb-10'>Impartición de talleres didácticos dirigido a padres, madres o cuidadores pertenecientes a comunidades en contextos de riesgo, con el objetivo de brindar herramientas de educación para cambiar la crianza tradicional autoritaria por una crianza positiva.</p>
-              <span className='text-sm block font-bold'>A Recaudar</span>
-              <span className='text-3xl font-bold text-green-500'>$33,000</span>
+              <FaChalkboardTeacher className='text-6xl mb-10 text-mainBlue ocultos'/>
+              <p className='mb-10 ocultos'>Impartición de talleres didácticos dirigido a padres, madres o cuidadores pertenecientes a comunidades en contextos de riesgo, con el objetivo de brindar herramientas de educación para cambiar la crianza tradicional autoritaria por una crianza positiva.</p>
+              <span className='text-sm block font-bold ocultos'>A Recaudar</span>
+              <span className='text-3xl font-bold text-green-500 ocultos'>$33,000</span>
             </div>
             <div className='col-start-3 col-end-8 row start-1 row-end-2 order-1 md:order-none'>
               <Image src="/images/p3.jpg" alt="classroom" width='640' height='286' />

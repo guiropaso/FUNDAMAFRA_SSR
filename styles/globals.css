@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 #hp-banner {
     background-color: #a35392;
     background-image: url(../public/images/wp1.jpg);
@@ -86,6 +91,23 @@
     transition: all 1s;
 }
 
-.en-pantalla {
-    opacity: 1;
+p.ocultos {
+    transform: translateX(40px);
 }
+
+ h2.ocultos, h3.ocultos, h4.ocultos, span.ocultos {
+    transform: translateY(40px);
+}
+#contacto-img.ocultos, #formdiv.ocultos {
+    transform: translateY(40px);
+}
+
+h2.en-pantalla, h3.en-pantalla, h4.en-pantalla, h5.en-pantalla, h6.en-pantalla,
+span.en-pantalla, img.en-pantalla, a.en-pantalla, div.en-pantalla, section.en-pantalla,
+p.en-pantalla, svg.en-pantalla, #contacto-img.en-pantalla, #formdiv.en-pantalla{
+    opacity: 1;
+    transform: translateX(0);
+    transform: translateY(0);
+}
+
+
