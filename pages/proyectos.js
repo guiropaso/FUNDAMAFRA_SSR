@@ -20,7 +20,7 @@ export default function Proyectos() {
       <section id='proyectos-banner' className='bg-blend-multiply'>
         <div className='container mx-auto flex flex-col py-36 justify-center items-center'>
           <h2 className='text-5xl text-center font-bold text-pink-500 ocultos'>AYÚDANOS <span className='text-5xl font-bold text-white'> A CUMPLIR SUEÑOS</span> </h2>
-          <p className='text-white mt-2 font-bold text-lg max-w-lg ocultos'>Conoce nuestros proyectos</p>
+          <p className='text-white mt-2 font-bold text-md max-w-md ocultos'>Conoce nuestros proyectos</p>
           <p className='text-white mt-5 text-lg px-2 max-w-2xl text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium exercitationem praesentium cum rerum rem libero incidunt, natus, aperiam consequuntur eius necessitatibus hic veniam neque quam dicta odit aliquid quas qui!</p>
         </div>
       </section>

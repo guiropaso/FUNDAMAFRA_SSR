@@ -22,7 +22,7 @@ export default function Home() {
       <section id='hp-banner' className='bg-blend-multiply'>
         <div className='container mx-auto flex flex-col space-y-12 py-36 text-center'>
           <h2 className='text-3xl max-w-sm text-white mx-auto md:text-5xl md:mx-0 md:max-w-xl md:text-left ocultos'>Construyamos una sociedad donde todas las familias se sientan seguras, fuertes y felices.</h2>
-          <p className='text-xl max-w-sm text-white mx-auto md:mx-0 md:max-w-lg md:text-left ocultos'>Nuestra fundación busca poder apoyar de una manera integral a  todas las familias salvadoreñas.
+          <p className='text-xl max-w-sm text-white mx-auto md:mx-0 md:max-w-lg md:text-left'>Nuestra fundación busca poder apoyar de una manera integral a  todas las familias salvadoreñas.
           ¡Ayúdanos a poder llegar a más hogares!</p>
         </div>
       </section>
@@ -59,7 +59,7 @@ export default function Home() {
       {/* Take Action Section */}
       <section id='hp-involucrate'>
         <div className='my-20'>
-          <h2 className='text-center font-bold text-5xl text-royal md:text-6xl ocultos'>Involúcrate</h2>
+          <h2 className='text-center font-bold text-5xl text-royal md:text-6xl'>Involúcrate</h2>
         </div>
 
         {/* Flex Container */}
@@ -71,7 +71,7 @@ export default function Home() {
             </div>
             <div className='col-start-4 col-end-7 bg-purple row-start-1 row-end-2 md:my-8 p-5'>
               <h3 className='text-3xl text-white md:mt-20 mb-10 ocultos'>Voluntariado</h3>
-              <p className='text-white ocultos'>Siempre buscamos manos fraternas que nos ayuden a cambiar la realidad de las familias salvadoreñas para ejecutar una variedad de proyectos desde asistir con programas de educación hasta desarrollar sus propias ideas de cambio en la sociedad.</p>
+              <p className='text-white'>Siempre buscamos manos fraternas que nos ayuden a cambiar la realidad de las familias salvadoreñas para ejecutar una variedad de proyectos desde asistir con programas de educación hasta desarrollar sus propias ideas de cambio en la sociedad.</p>
             </div>
           </div>
           {/* Second Grid Container */}
@@ -81,7 +81,7 @@ export default function Home() {
             </div>
             <div className='col-start-1 col-end-4 bg-royal row-start-1 row-end-2 md:my-8 p-5'>
               <h3 className='text-3xl text-white md:mt-20 mb-10 text-right ocultos'>Pasantías y oportunidades laborales</h3>
-              <p className='text-right text-white ocultos'>Una pasantía en FUNDAMAFRA es una experiencia única, parte de trabajar de cerca con nuestro staff y voluntarios, nuestros interinos pueden completar un proyecto de su propia creación.</p>
+              <p className='text-right text-white'>Una pasantía en FUNDAMAFRA es una experiencia única, parte de trabajar de cerca con nuestro staff y voluntarios, nuestros interinos pueden completar un proyecto de su propia creación.</p>
             </div>
           </div>
         </div>
