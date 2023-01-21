@@ -7,7 +7,7 @@ import Observer from '@/utils/useObserver'
 
 
 
-export default function contacto() {
+export default function Contacto() {
   
   useEffect(() => {
   
