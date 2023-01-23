@@ -46,7 +46,15 @@ export default async function handler(req, res) {
                 user: `${process.env.MAIL_SENDER}`,
                 pass: `${process.env.MAIL_PASS}`
             }
+            // host: "smtp.mailtrap.io",
+            // port: 2525,
+            // auth: {
+            //     user: "a240cadf05d88d",
+            //     pass: "9ce2786cff1b91"
+            // }
         })
+
+        // ,"Pruebas 2" <estelitadepalacios@gmail.com>,"Pruebas 3" <andreagpalacios02@gmail.com>
 
         let mailOptions = {
             from: `"FUNDAMAFRA Web" <${process.env.MAIL_SENDER}>`,
@@ -57,12 +65,12 @@ export default async function handler(req, res) {
 
         try {
             await transporter.sendMail(mailOptions)
-            return res.status(200).json({message: 'Success'})
+            return res.status(200).json({message: 'Gracias por tu mensaje, nos pondremos en contacto pronto'})
         }
 
         catch(err) {
             console.log('Error!!', err)
-            return res.status(500).json({error: 'Server error'})
+            return res.status(500).json({error: 'Ha ocurrido un error, trata de nuevo o contáctanos en cualquiera de nuestros otros canales'})
         }
 
     }

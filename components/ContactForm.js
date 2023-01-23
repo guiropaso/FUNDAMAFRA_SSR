@@ -1,5 +1,7 @@
 import {Formik, Form, Field, ErrorMessage} from 'formik'
 import * as Yup from 'yup'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const initialValues = {
     name: '',
@@ -19,7 +21,12 @@ const onSubmit = async values => {
     })
 
     const data = await response.json()
-    console.log(data);
+    if(response.ok) {
+        toast.success(data.message);
+    }
+    else {
+        toast.error(data.error);
+    }
 }
 
 const phoneRegExp = /^\+?[1-9][0-9]{7,14}$/
